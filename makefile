@@ -26,4 +26,4 @@ fix-lint:
 
 dev:
 	cd src/docusaurus
-	npx docusaurus start
+	npx docusaurus start --host 0.0.0.0
