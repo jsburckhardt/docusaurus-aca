@@ -18,7 +18,7 @@ src/docusaurus/docs
 All dependencies are installed as part of the devcontainer bootstrap. So, for starting the site:
 
 ```bash
-make dev
+make docs
 ```
 
 Now you can visit localhost:3000
