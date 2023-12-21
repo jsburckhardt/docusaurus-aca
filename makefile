@@ -24,6 +24,6 @@ fix-lint:
 
 .ONESHELL:
 
-dev:
+docs:
 	cd src/docusaurus
 	npx docusaurus start --host 0.0.0.0
