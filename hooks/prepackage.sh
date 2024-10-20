@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 set -euo pipefail
 
 # if environment variable RELEASE_VERSION is set use it as DOCKER_TAG
