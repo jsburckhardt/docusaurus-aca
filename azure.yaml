@@ -14,4 +14,4 @@ services:
     language: js
     host: containerapp
     docker:
-      tag: docusaurus-aca:${DOCKER_IMAGE_TAG=latest}
+      tag: ${DOCKER_IMAGE_TAG=latest}
