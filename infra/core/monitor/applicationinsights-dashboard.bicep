@@ -1230,6 +1230,6 @@ resource applicationInsightsDashboard 'Microsoft.Portal/dashboards@2020-09-01-pr
   }
 }
 
-resource applicationInsights 'Microsoft.Insights/components@2020-02-02' existing = {
+resource applicationInsights 'Microsoft.Insights/components@2020-02-02-preview' existing = {
   name: applicationInsightsName
 }

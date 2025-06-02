@@ -25,7 +25,7 @@ param networkAcls object = {
 param publicNetworkAccess string = 'Enabled'
 param sku object = { name: 'Standard_LRS' }
 
-resource storage 'Microsoft.Storage/storageAccounts@2022-05-01' = {
+resource storage 'Microsoft.Storage/storageAccounts@2023-01-01' = {
   name: name
   location: location
   tags: tags

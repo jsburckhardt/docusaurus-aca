@@ -35,7 +35,7 @@ param use32BitWorkerProcess bool = false
 param ftpsState string = 'FtpsOnly'
 param healthCheckPath string = ''
 
-resource appService 'Microsoft.Web/sites@2022-03-01' = {
+resource appService 'Microsoft.Web/sites@2023-01-01' = {
   name: name
   location: location
   tags: tags
@@ -75,7 +75,6 @@ resource appService 'Microsoft.Web/sites@2022-03-01' = {
 
   resource basicPublishingCredentialsPoliciesFtp 'basicPublishingCredentialsPolicies' = {
     name: 'ftp'
-    location: location
     properties: {
       allow: false
     }
@@ -83,7 +82,6 @@ resource appService 'Microsoft.Web/sites@2022-03-01' = {
 
   resource basicPublishingCredentialsPoliciesScm 'basicPublishingCredentialsPolicies' = {
     name: 'scm'
-    location: location
     properties: {
       allow: false
     }
@@ -108,7 +106,7 @@ resource keyVault 'Microsoft.KeyVault/vaults@2022-07-01' existing = if (!(empty(
   name: keyVaultName
 }
 
-resource applicationInsights 'Microsoft.Insights/components@2020-02-02' existing = if (!empty(applicationInsightsName)) {
+resource applicationInsights 'Microsoft.Insights/components@2020-02-02-preview' existing = if (!empty(applicationInsightsName)) {
   name: applicationInsightsName
 }
 

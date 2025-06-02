@@ -26,7 +26,7 @@ param skuCount int = 0
 @description('Azure Application Insights Name')
 param applicationInsightsName string
 
-resource apimService 'Microsoft.ApiManagement/service@2021-08-01' = {
+resource apimService 'Microsoft.ApiManagement/service@2023-03-01-preview' = {
   name: name
   location: location
   tags: union(tags, { 'azd-service-name': name })
@@ -57,7 +57,7 @@ resource apimService 'Microsoft.ApiManagement/service@2021-08-01' = {
   }
 }
 
-resource apimLogger 'Microsoft.ApiManagement/service/loggers@2021-12-01-preview' = if (!empty(applicationInsightsName)) {
+resource apimLogger 'Microsoft.ApiManagement/service/loggers@2023-03-01-preview' = if (!empty(applicationInsightsName)) {
   name: 'app-insights-logger'
   parent: apimService
   properties: {
@@ -71,7 +71,7 @@ resource apimLogger 'Microsoft.ApiManagement/service/loggers@2021-12-01-preview'
   }
 }
 
-resource applicationInsights 'Microsoft.Insights/components@2020-02-02' existing = if (!empty(applicationInsightsName)) {
+resource applicationInsights 'Microsoft.Insights/components@2020-02-02-preview' existing = if (!empty(applicationInsightsName)) {
   name: applicationInsightsName
 }
 

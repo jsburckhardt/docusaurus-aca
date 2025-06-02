@@ -52,7 +52,7 @@ module containerRegistryAccess '../security/registry-access.bicep' = {
   }
 }
 
-resource app 'Microsoft.App/containerApps@2022-03-01' = {
+resource app 'Microsoft.App/containerApps@2023-05-01' = {
   name: name
   location: location
   tags: tags
@@ -108,12 +108,12 @@ resource app 'Microsoft.App/containerApps@2022-03-01' = {
   }
 }
 
-resource containerAppsEnvironment 'Microsoft.App/managedEnvironments@2022-03-01' existing = {
+resource containerAppsEnvironment 'Microsoft.App/managedEnvironments@2023-05-01' existing = {
   name: containerAppsEnvironmentName
 }
 
 // 2022-02-01-preview needed for anonymousPullEnabled
-resource containerRegistry 'Microsoft.ContainerRegistry/registries@2022-02-01-preview' existing = {
+resource containerRegistry 'Microsoft.ContainerRegistry/registries@2023-01-01-preview' existing = {
   name: containerRegistryName
 }
 
