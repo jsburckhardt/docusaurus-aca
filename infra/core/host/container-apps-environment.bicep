@@ -6,7 +6,7 @@ param daprEnabled bool = false
 param logAnalyticsWorkspaceName string
 param applicationInsightsName string = ''
 
-resource containerAppsEnvironment 'Microsoft.App/managedEnvironments@2022-03-01' = {
+resource containerAppsEnvironment 'Microsoft.App/managedEnvironments@2023-05-01' = {
   name: name
   location: location
   tags: tags
@@ -26,7 +26,7 @@ resource logAnalyticsWorkspace 'Microsoft.OperationalInsights/workspaces@2022-10
   name: logAnalyticsWorkspaceName
 }
 
-resource applicationInsights 'Microsoft.Insights/components@2020-02-02' existing = if (daprEnabled && !empty(applicationInsightsName)){
+resource applicationInsights 'Microsoft.Insights/components@2020-02-02-preview' existing = if (daprEnabled && !empty(applicationInsightsName)){
   name: applicationInsightsName
 }
 

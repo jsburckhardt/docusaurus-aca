@@ -4,11 +4,11 @@ param name string
 @description('The app settings to be applied to the app service')
 param appSettings object
 
-resource appService 'Microsoft.Web/sites@2022-03-01' existing = {
+resource appService 'Microsoft.Web/sites@2023-01-01' existing = {
   name: name
 }
 
-resource settings 'Microsoft.Web/sites/config@2022-03-01' = {
+resource settings 'Microsoft.Web/sites/config@2023-01-01' = {
   name: 'appsettings'
   parent: appService
   properties: appSettings
